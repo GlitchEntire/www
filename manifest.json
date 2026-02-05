@@ -1,0 +1,39 @@
+{
+  "name": "Miniblox Unlocked CG!",
+  "version": "1.0.0",
+  "description": "Extension to unlock alot of Miniblox features, created by MineTrumps, Uses heythereu's injection method (https://github.com/heythereu/Miniblox-Patcher/tree/main), icon.png by Alice",
+  "manifest_version": 3,
+  "permissions": [
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "https://miniblox.online/*",
+    "https://miniblox.io/*"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://miniblox.online/*",
+        "https://blockcraft.online/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}
